@@ -240,7 +240,7 @@ const HomePage = () => {
             className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-2xl hover:shadow-amber-500/25 transform hover:scale-105 transition-all duration-300"
             onClick={() => document.getElementById('tours').scrollIntoView({ behavior: 'smooth' })}
           >
-            Explore Sacred Sites
+            Explore Islamic Sites
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
