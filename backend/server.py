@@ -85,6 +85,23 @@ class UserCreate(BaseModel):
     email: EmailStr
     phone: Optional[str] = None
 
+class PaymentTransaction(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    session_id: str
+    amount: float
+    currency: str = "usd"
+    metadata: Optional[Dict[str, str]] = None
+    payment_status: str = "pending"  # pending, paid, failed, expired
+    booking_id: Optional[str] = None
+    user_email: Optional[str] = None
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class PaymentRequest(BaseModel):
+    booking_id: str
+    success_url: str
+    cancel_url: str
+
 # Helper function to convert datetime objects for MongoDB storage
 def prepare_for_mongo(data):
     if isinstance(data, dict):
