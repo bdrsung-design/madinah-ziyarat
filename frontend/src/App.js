@@ -480,16 +480,33 @@ const HomePage = () => {
                         <SelectItem value="16:00">4:00 PM</SelectItem>
                       </SelectContent>
                     </Select>
-                    
-                    <div className="mt-4 p-3 bg-amber-50 rounded-lg">
-                      <p className="text-sm text-gray-700">
-                        <strong>Selected Duration:</strong> {bookingData.duration} {bookingData.duration === 1 ? 'hour' : 'hours'}
-                      </p>
-                      <p className="text-sm text-gray-700">
-                        <strong>Distance:</strong> {selectedSite.distance}
-                      </p>
-                    </div>
                   </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <Clock className="inline w-4 h-4 mr-1" />
+                      Tour Duration
+                    </label>
+                    <Select value={bookingData.duration.toString()} onValueChange={(value) => setBookingData({...bookingData, duration: parseInt(value)})}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {[1,2,3,4,5,6,7,8,9,10].map(hours => (
+                          <SelectItem key={hours} value={hours.toString()}>
+                            {hours} {hours === 1 ? 'Hour' : 'Hours'}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Tour Details
+                    </label>
                 </div>
 
                 <div>
