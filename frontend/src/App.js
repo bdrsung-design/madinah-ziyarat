@@ -321,6 +321,41 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Payment Status Display */}
+      {paymentStatus && (
+        <div className="fixed top-4 right-4 z-50">
+          <Card className={`w-96 ${
+            paymentStatus === 'success' ? 'border-green-500 bg-green-50' :
+            paymentStatus === 'processing' ? 'border-amber-500 bg-amber-50' :
+            'border-red-500 bg-red-50'
+          }`}>
+            <CardContent className="p-4">
+              <div className="flex items-center space-x-3">
+                {paymentStatus === 'success' && <div className="w-4 h-4 bg-green-500 rounded-full"></div>}
+                {paymentStatus === 'processing' && <div className="w-4 h-4 bg-amber-500 rounded-full animate-pulse"></div>}
+                {(paymentStatus === 'error' || paymentStatus === 'expired' || paymentStatus === 'timeout') && 
+                  <div className="w-4 h-4 bg-red-500 rounded-full"></div>}
+                <div>
+                  <p className="font-medium">
+                    {paymentStatus === 'success' && 'Payment Successful!'}
+                    {paymentStatus === 'processing' && 'Processing Payment...'}
+                    {paymentStatus === 'error' && 'Payment Error'}
+                    {paymentStatus === 'expired' && 'Payment Expired'}
+                    {paymentStatus === 'timeout' && 'Payment Timeout'}
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    {paymentStatus === 'success' && 'Your booking has been confirmed.'}
+                    {paymentStatus === 'processing' && 'Please wait while we process your payment.'}
+                    {(paymentStatus === 'error' || paymentStatus === 'expired' || paymentStatus === 'timeout') && 
+                      'Please try booking again or contact support.'}
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )}
+
       {/* Booking Modal */}
       {showBooking && selectedSite && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
