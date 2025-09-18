@@ -66,18 +66,6 @@ const historicalSites = [
     image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/ieodz8c4_Trench%20battle.jpg",
     price: 130,
     rating: 4.6
-  },
-  {
-    id: 5,
-    name: "Jannat al-Baqi",
-    nameArabic: "جنة البقيع",
-    description: "The ancient cemetery where many of the Prophet's companions are buried",
-    significance: "Islamic burial ground",
-    duration: "Flexible (1-10 hours)",
-    distance: "2 km from Masjid an-Nabawi",
-    image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/jtnfvaio_prophet%20mosque.jpg",
-    price: 80,
-    rating: 4.9
   }
 ];
 
