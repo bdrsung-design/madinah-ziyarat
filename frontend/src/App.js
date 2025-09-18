@@ -218,7 +218,7 @@ const HomePage = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1721401609038-025bcde7388b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxJc2xhbWljJTIwYXJjaGl0ZWN0dXJlJTIwTWFkaW5haHxlbnwwfHx8fDE3NTgyMjkxMjF8MA&ixlib=rb-4.1.0&q=85')`
+            backgroundImage: `url('https://customer-assets.emergentagent.com/job_madinah-history/artifacts/jtnfvaio_prophet%20mosque.jpg')`
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
