@@ -14,6 +14,11 @@ from emergentintegrations.payments.stripe.checkout import StripeCheckout, Checko
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
+# Initialize Stripe
+stripe_api_key = os.environ.get('STRIPE_API_KEY')
+if not stripe_api_key:
+    logging.warning("STRIPE_API_KEY not found in environment variables")
+
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
