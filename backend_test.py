@@ -173,7 +173,7 @@ class MadinahToursAPITester:
             "PUT",
             f"bookings/{self.booking_id}/status",
             200,
-            data={"status": "confirmed"}
+            params={"status": "confirmed"}
         )
         
         return success
