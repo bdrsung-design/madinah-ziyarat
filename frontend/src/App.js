@@ -90,6 +90,7 @@ const HomePage = () => {
     groupSize: 1,
     date: null,
     time: '',
+    duration: 2, // Duration in hours (1-10)
     specialRequests: ''
   });
   const [showBooking, setShowBooking] = useState(false);
