@@ -229,7 +229,7 @@ const HomePage = () => {
             Discover Madinah's
           </h1>
           <h2 className="text-4xl md:text-6xl font-bold mb-8">
-            Sacred Heritage
+            Islamic Heritage
           </h2>
           <p className="text-xl md:text-2xl mb-12 text-gray-200 leading-relaxed">
             Journey through the most historically significant Islamic sites in Madinah. 
