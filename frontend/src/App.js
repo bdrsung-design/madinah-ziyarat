@@ -94,6 +94,56 @@ const HomePage = () => {
   });
   const [showBooking, setShowBooking] = useState(false);
   const [bookingType, setBookingType] = useState('contact'); // 'contact' or 'payment'
+  const [paymentStatus, setPaymentStatus] = useState(null);
+  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+
+  // Check for payment return on component mount
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('session_id');
+    if (sessionId) {
+      checkPaymentStatus(sessionId);
+    }
+  }, []);
+
+  const checkPaymentStatus = async (sessionId, attempts = 0) => {
+    const maxAttempts = 5;
+    const pollInterval = 2000; // 2 seconds
+
+    if (attempts >= maxAttempts) {
+      setPaymentStatus('timeout');
+      toast.error('Payment status check timed out. Please check your email for confirmation.');
+      return;
+    }
+
+    try {
+      const response = await axios.get(`${API}/payments/checkout/status/${sessionId}`);
+      
+      if (response.data.payment_status === 'paid') {
+        setPaymentStatus('success');
+        toast.success('Payment successful! Your tour booking is confirmed.');
+        // Clear URL parameters
+        window.history.replaceState({}, document.title, window.location.pathname);
+        return;
+      } else if (response.data.status === 'expired') {
+        setPaymentStatus('expired');
+        toast.error('Payment session expired. Please try again.');
+        return;
+      }
+
+      // If payment is still pending, continue polling
+      if (attempts === 0) {
+        setPaymentStatus('processing');
+        toast.info('Payment is being processed...');
+      }
+      
+      setTimeout(() => checkPaymentStatus(sessionId, attempts + 1), pollInterval);
+    } catch (error) {
+      console.error('Error checking payment status:', error);
+      setPaymentStatus('error');
+      toast.error('Error checking payment status. Please try again.');
+    }
+  };
 
   const handleBookingSubmit = async (e) => {
     e.preventDefault();
@@ -122,21 +172,40 @@ const HomePage = () => {
       
       if (bookingType === 'contact') {
         toast.success("Booking request submitted! We'll contact you soon.");
+        setShowBooking(false);
+        setBookingData({
+          name: '',
+          email: '',
+          phone: '',
+          groupSize: 1,
+          date: null,
+          time: '',
+          specialRequests: ''
+        });
       } else {
-        toast.success("Booking confirmed! Payment details sent to your email.");
+        // Handle payment flow
+        const bookingId = response.data.id;
+        const currentUrl = window.location.origin + window.location.pathname;
+        const successUrl = `${currentUrl}?session_id={CHECKOUT_SESSION_ID}`;
+        const cancelUrl = currentUrl;
+
+        setIsProcessingPayment(true);
+        
+        const paymentResponse = await axios.post(`${API}/payments/checkout/session`, {
+          booking_id: bookingId,
+          success_url: successUrl,
+          cancel_url: cancelUrl
+        });
+
+        // Redirect to Stripe Checkout
+        if (paymentResponse.data.url) {
+          window.location.href = paymentResponse.data.url;
+        } else {
+          throw new Error('No checkout URL received');
+        }
       }
-      
-      setShowBooking(false);
-      setBookingData({
-        name: '',
-        email: '',
-        phone: '',
-        groupSize: 1,
-        date: null,
-        time: '',
-        specialRequests: ''
-      });
     } catch (error) {
+      setIsProcessingPayment(false);
       toast.error("Failed to submit booking. Please try again.");
       console.error('Booking error:', error);
     }
