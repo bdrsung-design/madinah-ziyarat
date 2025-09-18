@@ -254,7 +254,7 @@ const HomePage = () => {
               Historical Islamic Sites
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover the sacred locations that shaped Islamic history in the blessed city of Madinah
+              Discover the Islamic locations that shaped Islamic history in the blessed city of Madinah
             </p>
           </div>
 
