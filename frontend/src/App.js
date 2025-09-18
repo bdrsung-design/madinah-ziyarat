@@ -483,7 +483,7 @@ const HomePage = () => {
                     
                     <div className="mt-4 p-3 bg-amber-50 rounded-lg">
                       <p className="text-sm text-gray-700">
-                        <strong>Duration:</strong> {selectedSite.duration}
+                        <strong>Selected Duration:</strong> {bookingData.duration} {bookingData.duration === 1 ? 'hour' : 'hours'}
                       </p>
                       <p className="text-sm text-gray-700">
                         <strong>Distance:</strong> {selectedSite.distance}
