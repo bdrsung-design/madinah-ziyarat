@@ -462,6 +462,9 @@ async def startup_event():
         await db.bookings.create_index("created_at")
         await db.bookings.create_index("status")
         await db.users.create_index("email", unique=True)
+        await db.payment_transactions.create_index("session_id", unique=True)
+        await db.payment_transactions.create_index("booking_id")
+        await db.payment_transactions.create_index("user_email")
         logger.info("Database indexes created successfully")
     except Exception as e:
         logger.error(f"Error creating indexes: {e}")
