@@ -105,11 +105,17 @@ const HomePage = () => {
 
     try {
       const bookingPayload = {
-        ...bookingData,
-        siteId: selectedSite.id,
-        siteName: selectedSite.name,
-        totalPrice: selectedSite.price * bookingData.groupSize,
-        bookingType
+        name: bookingData.name,
+        email: bookingData.email,
+        phone: bookingData.phone,
+        site_id: selectedSite.id,
+        site_name: selectedSite.name,
+        group_size: bookingData.groupSize,
+        date: bookingData.date.toISOString().split('T')[0],
+        time: bookingData.time,
+        special_requests: bookingData.specialRequests,
+        total_price: selectedSite.price * bookingData.groupSize,
+        booking_type: bookingType
       };
 
       const response = await axios.post(`${API}/bookings`, bookingPayload);
