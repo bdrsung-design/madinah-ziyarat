@@ -494,6 +494,7 @@ const HomePage = () => {
                   <Button 
                     type="submit" 
                     className="flex-1 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white"
+                    disabled={isProcessingPayment}
                   >
                     {bookingType === 'contact' ? (
                       <>
@@ -503,7 +504,7 @@ const HomePage = () => {
                     ) : (
                       <>
                         <CreditCard className="w-4 h-4 mr-2" />
-                        Pay & Book Now
+                        {isProcessingPayment ? 'Processing...' : 'Pay & Book Now'}
                       </>
                     )}
                   </Button>
