@@ -181,6 +181,7 @@ const HomePage = () => {
           groupSize: 1,
           date: null,
           time: '',
+          duration: 2,
           specialRequests: ''
         });
       } else {
