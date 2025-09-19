@@ -315,9 +315,8 @@ const HomePage = () => {
                   </div>
                   
                   <div className="flex items-center justify-between pt-4 border-t">
-                    <div className="text-2xl font-bold text-amber-700">
-                      ${site.price}
-                      <span className="text-sm font-normal text-gray-500">/hour base</span>
+                    <div className="text-lg font-semibold text-gray-700">
+                      Historical Islamic Site
                     </div>
                     <Button 
                       onClick={() => {
