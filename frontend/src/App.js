@@ -536,6 +536,7 @@ const HomePage = () => {
                         <SelectValue placeholder="Select time" />
                       </SelectTrigger>
                       <SelectContent>
+                        <SelectItem value="06:00">6:00 AM</SelectItem>
                         <SelectItem value="08:00">8:00 AM</SelectItem>
                         <SelectItem value="10:00">10:00 AM</SelectItem>
                         <SelectItem value="14:00">2:00 PM</SelectItem>
