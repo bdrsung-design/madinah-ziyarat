@@ -473,7 +473,7 @@ const HomePage = () => {
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        {[1,2,3,4,5,6,7,8,9,10].map(num => (
+                        {Array.from({length: bookingData.carType === 'sedan' ? 4 : 8}, (_, i) => i + 1).map(num => (
                           <SelectItem key={num} value={num.toString()}>{num} {num === 1 ? 'Person' : 'People'}</SelectItem>
                         ))}
                       </SelectContent>
