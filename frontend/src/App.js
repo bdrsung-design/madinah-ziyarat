@@ -403,25 +403,6 @@ const HomePage = () => {
             </CardHeader>
             
             <CardContent className="p-6">
-              <Tabs value={bookingType} onValueChange={setBookingType} className="mb-6">
-                <TabsList className="grid w-full grid-cols-2">
-                  <TabsTrigger value="contact">Contact Booking</TabsTrigger>
-                  <TabsTrigger value="payment">Pay Now</TabsTrigger>
-                </TabsList>
-                
-                <TabsContent value="contact" className="mt-4">
-                  <p className="text-sm text-gray-600 mb-4">
-                    Submit your booking request and we'll contact you with payment details
-                  </p>
-                </TabsContent>
-                
-                <TabsContent value="payment" className="mt-4">
-                  <p className="text-sm text-gray-600 mb-4">
-                    Complete your booking with instant confirmation and payment
-                  </p>
-                </TabsContent>
-              </Tabs>
-
               <form onSubmit={handleBookingSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
