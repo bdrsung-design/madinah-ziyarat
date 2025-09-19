@@ -425,13 +425,6 @@ Please contact the customer to confirm their booking.`;
             </CardHeader>
             
             <CardContent className="p-6">
-              <div className="mb-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
-                <p className="text-sm text-blue-700">
-                  <Mail className="inline w-4 h-4 mr-1" />
-                  Your booking request will be sent via email to <strong>bdrsung@gmail.com</strong> for confirmation.
-                </p>
-              </div>
-              
               <form onSubmit={handleBookingSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
