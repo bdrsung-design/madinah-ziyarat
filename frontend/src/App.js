@@ -608,8 +608,7 @@ const HomePage = () => {
                       <p className="text-gray-700 mb-1">
                         <strong>Payment:</strong> {
                           bookingData.paymentMethod === 'cash' ? 'Cash at location (25% confirmation)' :
-                          bookingData.paymentMethod === 'apple-pay' ? 'Apple Pay' :
-                          'Pay with Card'
+                          'Redotpay'
                         }
                       </p>
                       <p className="text-amber-700 font-semibold">
