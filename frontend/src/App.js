@@ -535,31 +535,18 @@ const HomePage = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Pricing Information
+                      💳 Payment Method
                     </label>
-                    {bookingData.visitType === 'package' ? (
-                      <div className="p-3 bg-amber-50 rounded-lg text-sm">
-                        <p className="text-gray-700 mb-1">
-                          <strong>Selection:</strong> Package
-                        </p>
-                        <p className="text-gray-700 mb-1">
-                          <strong>Car type:</strong> {bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}
-                        </p>
-                        <p className="text-amber-700 font-semibold">
-                          <strong>Price per hour:</strong> ${currentPrice}
-                        </p>
-                      </div>
-                    ) : (
-                      <div className="p-3 bg-gray-50 rounded-lg text-sm text-gray-600">
-                        <p>Location: {
-                          bookingData.visitType === 'quba-mosque' ? 'Quba Mosque' :
-                          bookingData.visitType === 'mount-uhud' ? 'Mount Uhud' :
-                          bookingData.visitType === 'qiblatain-mosque' ? 'Qiblatain Mosque' :
-                          'Trench Battle'
-                        }</p>
-                        <p className="text-sm text-gray-500 mt-1">Select "Package" to view pricing</p>
-                      </div>
-                    )}
+                    <Select value={bookingData.paymentMethod} onValueChange={(value) => setBookingData({...bookingData, paymentMethod: value})}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="cash">Pay cash at location (25% confirmation)</SelectItem>
+                        <SelectItem value="apple-pay">Apple Pay - 1244917277 Redotpay</SelectItem>
+                        <SelectItem value="card">Pay with Card - 1244917277 Redotpay</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
 
