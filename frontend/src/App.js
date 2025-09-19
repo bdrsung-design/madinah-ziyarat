@@ -201,7 +201,7 @@ const HomePage = () => {
         time: bookingData.time,
         special_requests: bookingData.specialRequests,
         total_price: currentPrice ? currentPrice * bookingData.duration : 0,
-        booking_type: bookingType
+        booking_type: 'contact'
       };
 
       const response = await axios.post(`${API}/bookings`, bookingPayload);
