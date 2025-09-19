@@ -650,8 +650,7 @@ const HomePage = () => {
                     <span>Payment method:</span>
                     <span>{
                       bookingData.paymentMethod === 'cash' ? 'Cash at location' :
-                      bookingData.paymentMethod === 'apple-pay' ? 'Apple Pay' :
-                      'Pay with Card'
+                      'Redotpay'
                     }</span>
                   </div>
                   <div className="flex justify-between items-center mb-2 border-t pt-2">
