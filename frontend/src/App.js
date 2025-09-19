@@ -173,6 +173,7 @@ const HomePage = () => {
           time: '',
           duration: 2,
           carType: 'sedan',
+          visitType: 'onsite',
           specialRequests: ''
         });
       } else {
