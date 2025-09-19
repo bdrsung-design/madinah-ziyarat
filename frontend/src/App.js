@@ -107,19 +107,24 @@ const HomePage = () => {
   const [paymentStatus, setPaymentStatus] = useState(null);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
-  // Fixed pricing table based on car type and location (only for package option)
+  // New comprehensive pricing table
   const getPriceBySelection = (carType, visitType) => {
-    // Only show pricing for package option
-    if (visitType !== 'package') {
-      return null;
-    }
-    
     const priceTable = {
       sedan: {
-        'package': 27 // Single package price for sedan
+        'quba-mosque': 27,
+        'mount-uhud': 27,
+        'qiblatain-mosque': 24,
+        'trench-battle': 24,
+        'package': 32,
+        'other-locations': 35
       },
       minivan: {
-        'package': 35 // Single package price for minivan
+        'quba-mosque': 35,
+        'mount-uhud': 35,
+        'qiblatain-mosque': 30,
+        'trench-battle': 30,
+        'package': 40,
+        'other-locations': 45
       }
     };
     
