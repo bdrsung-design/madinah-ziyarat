@@ -454,7 +454,7 @@ logger = logging.getLogger(__name__)
 @app.on_event("startup")
 async def startup_event():
     """Initialize the application"""
-    logger.info("Starting Madinah Historical Tours API")
+    logger.info("Starting Madinah Ziyarat API")
     
     # Create indexes for better performance
     try:
