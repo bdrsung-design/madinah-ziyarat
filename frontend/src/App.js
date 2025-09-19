@@ -558,9 +558,9 @@ const HomePage = () => {
                     <div className="p-3 bg-amber-50 rounded-lg text-sm">
                       <p className="text-gray-700 mb-1">
                         <strong>Location:</strong> {
-                          bookingData.visitType === 'quba-mosque' ? 'Quba Mosque' :
+                          bookingData.visitType === 'masjid-quba' ? 'Masjid Quba' :
                           bookingData.visitType === 'mount-uhud' ? 'Mount Uhud' :
-                          bookingData.visitType === 'qiblatain-mosque' ? 'Qiblatain Mosque' :
+                          bookingData.visitType === 'masjid-qiblatain' ? 'Masjid Qiblatain' :
                           bookingData.visitType === 'trench-battle' ? 'Trench Battle' :
                           bookingData.visitType === 'package' ? 'Package' :
                           'Other Locations'
