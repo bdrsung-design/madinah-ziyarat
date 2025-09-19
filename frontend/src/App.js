@@ -21,7 +21,7 @@ const API = `${BACKEND_URL}/api`;
 const historicalSites = [
   {
     id: 1,
-    name: "Quba Mosque",
+    name: "Masjid Quba",
     nameArabic: "مسجد قباء",
     description: "The first mosque ever built in Islam, established by Prophet Muhammad (PBUH) after Hijrah",
     significance: "First mosque in Islamic history",
