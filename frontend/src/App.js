@@ -491,6 +491,7 @@ const HomePage = () => {
                         <SelectItem value="mount-uhud">Mount Uhud</SelectItem>
                         <SelectItem value="qiblatain-mosque">Qiblatain Mosque</SelectItem>
                         <SelectItem value="trench-battle">Trench Battle</SelectItem>
+                        <SelectItem value="package">Package</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
