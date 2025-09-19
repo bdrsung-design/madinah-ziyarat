@@ -57,7 +57,7 @@ const historicalSites = [
   },
   {
     id: 4,
-    name: "Seven Mosques",
+    name: "Trench Battle",
     nameArabic: "المساجد السبعة",
     description: "Historic mosques near the site of the Battle of the Trench",
     significance: "Battle of the Trench historical site",
