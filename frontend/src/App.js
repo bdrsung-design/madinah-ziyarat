@@ -45,7 +45,7 @@ const historicalSites = [
     id: 3,
     name: "Masjid Qiblatain",
     nameArabic: "مسجد القبلتين",
-    description: "The mosque where the Qibla direction was changed from Jerusalem to Makkah",
+    description: "The mosque where the Qibla direction was changed from Palestine to Makkah",
     significance: "Historic Qibla direction change",
     duration: "Flexible (1-10 hours)",
     image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/m0vklizi_Qiblatain%20mosque.jpg",
