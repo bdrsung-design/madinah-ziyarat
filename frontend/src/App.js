@@ -609,34 +609,44 @@ const HomePage = () => {
 
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="flex justify-between items-center mb-2">
-                    <span>Selected location:</span>
+                    <span>Selected option:</span>
                     <span>{
                       bookingData.visitType === 'quba-mosque' ? 'Quba Mosque' :
                       bookingData.visitType === 'mount-uhud' ? 'Mount Uhud' :
                       bookingData.visitType === 'qiblatain-mosque' ? 'Qiblatain Mosque' :
-                      'Trench Battle'
+                      bookingData.visitType === 'trench-battle' ? 'Trench Battle' :
+                      'Package'
                     }</span>
                   </div>
                   <div className="flex justify-between items-center mb-2">
                     <span>Car type:</span>
                     <span>{bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}</span>
                   </div>
-                  <div className="flex justify-between items-center mb-2 border-t pt-2">
-                    <span>Price per hour:</span>
-                    <span className="font-semibold">${currentPrice}</span>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span>Duration:</span>
-                    <span>{bookingData.duration} {bookingData.duration === 1 ? 'hour' : 'hours'}</span>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span>Group size:</span>
-                    <span>{bookingData.groupSize} {bookingData.groupSize === 1 ? 'person' : 'people'}</span>
-                  </div>
-                  <div className="flex justify-between items-center font-bold text-lg border-t pt-2">
-                    <span>Total:</span>
-                    <span className="text-amber-700">${currentPrice * bookingData.duration}</span>
-                  </div>
+                  {currentPrice && (
+                    <>
+                      <div className="flex justify-between items-center mb-2 border-t pt-2">
+                        <span>Price per hour:</span>
+                        <span className="font-semibold">${currentPrice}</span>
+                      </div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span>Duration:</span>
+                        <span>{bookingData.duration} {bookingData.duration === 1 ? 'hour' : 'hours'}</span>
+                      </div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span>Group size:</span>
+                        <span>{bookingData.groupSize} {bookingData.groupSize === 1 ? 'person' : 'people'}</span>
+                      </div>
+                      <div className="flex justify-between items-center font-bold text-lg border-t pt-2">
+                        <span>Total:</span>
+                        <span className="text-amber-700">${currentPrice * bookingData.duration}</span>
+                      </div>
+                    </>
+                  )}
+                  {!currentPrice && (
+                    <div className="text-center py-4 text-gray-500">
+                      <p>Select "Package" to view pricing details</p>
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex gap-4">
