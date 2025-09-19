@@ -470,9 +470,9 @@ const HomePage = () => {
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="quba-mosque">Quba Mosque</SelectItem>
+                        <SelectItem value="masjid-quba">Masjid Quba</SelectItem>
                         <SelectItem value="mount-uhud">Mount Uhud</SelectItem>
-                        <SelectItem value="qiblatain-mosque">Qiblatain Mosque</SelectItem>
+                        <SelectItem value="masjid-qiblatain">Masjid Qiblatain</SelectItem>
                         <SelectItem value="trench-battle">Trench Battle</SelectItem>
                         <SelectItem value="package">Package</SelectItem>
                         <SelectItem value="other-locations">Other Locations</SelectItem>
