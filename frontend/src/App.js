@@ -294,7 +294,7 @@ const HomePage = () => {
                   <div className="flex items-center justify-between pt-4 border-t">
                     <div className="text-2xl font-bold text-amber-700">
                       ${site.price}
-                      <span className="text-sm font-normal text-gray-500">/person</span>
+                      <span className="text-sm font-normal text-gray-500">/hour</span>
                     </div>
                     <Button 
                       onClick={() => {
