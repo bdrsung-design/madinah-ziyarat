@@ -337,7 +337,7 @@ const HomePage = () => {
                   
                   <div className="flex items-center justify-between pt-4 border-t">
                     <div className="text-lg font-semibold text-gray-700">
-                      Historical Islamic Site
+                      
                     </div>
                     <Button 
                       onClick={() => {
