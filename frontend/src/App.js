@@ -580,6 +580,10 @@ const HomePage = () => {
                     <span>Car type:</span>
                     <span>{bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}</span>
                   </div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span>Visit type:</span>
+                    <span>{bookingData.visitType === 'onsite' ? 'On the Site' : 'Package'}</span>
+                  </div>
                   <div className="flex justify-between items-center font-bold text-lg border-t pt-2">
                     <span>Total:</span>
                     <span className="text-amber-700">${selectedSite.price * bookingData.duration}</span>
