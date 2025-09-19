@@ -607,14 +607,31 @@ const HomePage = () => {
                   
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Tour Details
+                      Pricing Information
                     </label>
-                    <div className="mt-4 p-3 bg-amber-50 rounded-lg">
-                      <p className="text-sm text-gray-700">
-                        <strong>Selected Duration:</strong> {bookingData.duration} {bookingData.duration === 1 ? 'hour' : 'hours'}
+                    <div className="p-3 bg-amber-50 rounded-lg text-sm">
+                      <p className="text-gray-700 mb-1">
+                        <strong>Location:</strong> {
+                          bookingData.visitType === 'quba-mosque' ? 'Quba Mosque' :
+                          bookingData.visitType === 'mount-uhud' ? 'Mount Uhud' :
+                          bookingData.visitType === 'qiblatain-mosque' ? 'Qiblatain Mosque' :
+                          bookingData.visitType === 'trench-battle' ? 'Trench Battle' :
+                          bookingData.visitType === 'package' ? 'Package' :
+                          'Other Locations'
+                        }
                       </p>
-                      <p className="text-sm text-gray-700">
-                        <strong>Distance:</strong> {selectedSite.distance}
+                      <p className="text-gray-700 mb-1">
+                        <strong>Car type:</strong> {bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}
+                      </p>
+                      <p className="text-gray-700 mb-1">
+                        <strong>Payment:</strong> {
+                          bookingData.paymentMethod === 'cash' ? 'Cash at location (25% confirmation)' :
+                          bookingData.paymentMethod === 'apple-pay' ? 'Apple Pay' :
+                          'Pay with Card'
+                        }
+                      </p>
+                      <p className="text-amber-700 font-semibold">
+                        <strong>Price per hour:</strong> ${currentPrice}
                       </p>
                     </div>
                   </div>
