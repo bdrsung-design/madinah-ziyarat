@@ -219,7 +219,7 @@ const HomePage = () => {
           duration: 2,
           carType: 'sedan',
           visitType: 'quba-mosque',
-          paymentMethod: 'redotpay',
+          paymentMethod: 'other',
           specialRequests: ''
         });
       } else {
