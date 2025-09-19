@@ -171,6 +171,7 @@ const HomePage = () => {
           date: null,
           time: '',
           duration: 2,
+          carType: 'sedan',
           specialRequests: ''
         });
       } else {
