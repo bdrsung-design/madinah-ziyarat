@@ -672,17 +672,8 @@ const HomePage = () => {
                     className="flex-1 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white"
                     disabled={isProcessingPayment}
                   >
-                    {bookingType === 'contact' ? (
-                      <>
-                        <Mail className="w-4 h-4 mr-2" />
-                        Submit Request
-                      </>
-                    ) : (
-                      <>
-                        <CreditCard className="w-4 h-4 mr-2" />
-                        {isProcessingPayment ? 'Processing...' : 'Pay & Book Now'}
-                      </>
-                    )}
+                    <Mail className="w-4 h-4 mr-2" />
+                    Submit Request
                   </Button>
                 </div>
               </form>
