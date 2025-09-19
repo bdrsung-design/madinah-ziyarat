@@ -584,8 +584,20 @@ const HomePage = () => {
 
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="flex justify-between items-center mb-2">
-                    <span>Price per hour:</span>
+                    <span>Base price per hour:</span>
                     <span>${selectedSite.price}</span>
+                  </div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span>Car type surcharge:</span>
+                    <span>+${bookingData.carType === 'minivan' ? '50' : '0'}</span>
+                  </div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span>Visit type surcharge:</span>
+                    <span>+${bookingData.visitType === 'package' ? '30' : '0'}</span>
+                  </div>
+                  <div className="flex justify-between items-center mb-2 border-t pt-2">
+                    <span>Final price per hour:</span>
+                    <span className="font-semibold">${currentPrice}</span>
                   </div>
                   <div className="flex justify-between items-center mb-2">
                     <span>Duration:</span>
@@ -605,7 +617,7 @@ const HomePage = () => {
                   </div>
                   <div className="flex justify-between items-center font-bold text-lg border-t pt-2">
                     <span>Total:</span>
-                    <span className="text-amber-700">${selectedSite.price * bookingData.duration}</span>
+                    <span className="text-amber-700">${currentPrice * bookingData.duration}</span>
                   </div>
                 </div>
 
