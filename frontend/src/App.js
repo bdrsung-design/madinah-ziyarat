@@ -176,7 +176,7 @@ const HomePage = () => {
         date: bookingData.date.toISOString().split('T')[0],
         time: bookingData.time,
         special_requests: bookingData.specialRequests,
-        total_price: currentPrice * bookingData.duration,
+        total_price: currentPrice ? currentPrice * bookingData.duration : 0,
         booking_type: bookingType
       };
 
