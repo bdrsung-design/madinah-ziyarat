@@ -79,6 +79,7 @@ const HomePage = () => {
     date: null,
     time: '',
     duration: 2, // Duration in hours (1-10)
+    carType: 'sedan', // Car type: sedan or minivan
     specialRequests: ''
   });
   const [showBooking, setShowBooking] = useState(false);
