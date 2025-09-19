@@ -526,8 +526,7 @@ const HomePage = () => {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="cash">Pay cash at location (25% confirmation)</SelectItem>
-                        <SelectItem value="apple-pay">Apple Pay - 1244917277 Redotpay</SelectItem>
-                        <SelectItem value="card">Pay with Card - 1244917277 Redotpay</SelectItem>
+                        <SelectItem value="redotpay">Redotpay - 1244917277</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
