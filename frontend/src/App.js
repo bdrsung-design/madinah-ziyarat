@@ -26,7 +26,6 @@ const historicalSites = [
     description: "The first mosque ever built in Islam, established by Prophet Muhammad (PBUH) after Hijrah",
     significance: "First mosque in Islamic history",
     duration: "Flexible (1-10 hours)",
-    distance: "4 km from city center",
     image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/ly49rk49_quba-mosque.jpg",
     price: 120,
     rating: 4.9
@@ -38,7 +37,6 @@ const historicalSites = [
     description: "Historic site of the Battle of Uhud, where Prophet Muhammad (PBUH) and his companions fought",
     significance: "Battle of Uhud historical site",
     duration: "Flexible (1-10 hours)",
-    distance: "4 km north of Madinah",
     image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/dl55hk46_Uhud-Mountain.jpg",
     price: 150,
     rating: 4.8
@@ -50,7 +48,6 @@ const historicalSites = [
     description: "The mosque where the Qibla direction was changed from Jerusalem to Makkah",
     significance: "Historic Qibla direction change",
     duration: "Flexible (1-10 hours)",
-    distance: "4 km from city center",
     image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/m0vklizi_Qiblatain%20mosque.jpg",
     price: 100,
     rating: 4.7
@@ -62,10 +59,31 @@ const historicalSites = [
     description: "Historic mosques near the site of the Battle of the Trench",
     significance: "Battle of the Trench historical site",
     duration: "Flexible (1-10 hours)",
-    distance: "2 km from city center",
     image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/ieodz8c4_Trench%20battle.jpg",
     price: 130,
     rating: 4.6
+  },
+  {
+    id: 5,
+    name: "Package",
+    nameArabic: "باقة شاملة",
+    description: "Complete tour package covering all major Islamic historical sites in Madinah",
+    significance: "Comprehensive Islamic heritage experience",
+    duration: "Flexible (1-10 hours)",
+    image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/4c69e4r3_quba-mosque.jpg",
+    price: 160,
+    rating: 4.9
+  },
+  {
+    id: 6,
+    name: "Other Locations",
+    nameArabic: "مواقع أخرى",
+    description: "Visit other significant Islamic locations and landmarks in Madinah",
+    significance: "Additional Islamic heritage sites",
+    duration: "Flexible (1-10 hours)",
+    image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/wrxrw3ri_Uhud-Mountain.jpg",
+    price: 180,
+    rating: 4.5
   }
 ];
 
