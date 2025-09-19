@@ -333,10 +333,6 @@ const HomePage = () => {
                       <Clock className="w-4 h-4 mr-1" />
                       {site.duration}
                     </div>
-                    <div className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-1" />
-                      {site.distance}
-                    </div>
                   </div>
                   
                   <div className="flex items-center justify-between pt-4 border-t">
