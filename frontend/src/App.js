@@ -501,7 +501,12 @@ const HomePage = () => {
                     </label>
                     <div className="p-3 bg-amber-50 rounded-lg text-sm">
                       <p className="text-gray-700 mb-1">
-                        <strong>Visit type:</strong> {bookingData.visitType === 'onsite' ? 'On the Site' : 'Package'}
+                        <strong>Location:</strong> {
+                          bookingData.visitType === 'quba-mosque' ? 'Quba Mosque' :
+                          bookingData.visitType === 'mount-uhud' ? 'Mount Uhud' :
+                          bookingData.visitType === 'qiblatain-mosque' ? 'Qiblatain Mosque' :
+                          'Trench Battle'
+                        }
                       </p>
                       <p className="text-gray-700 mb-1">
                         <strong>Car type:</strong> {bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}
