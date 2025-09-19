@@ -602,19 +602,20 @@ const HomePage = () => {
 
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="flex justify-between items-center mb-2">
-                    <span>Base price per hour:</span>
-                    <span>${selectedSite.price}</span>
+                    <span>Selected location:</span>
+                    <span>{
+                      bookingData.visitType === 'quba-mosque' ? 'Quba Mosque' :
+                      bookingData.visitType === 'mount-uhud' ? 'Mount Uhud' :
+                      bookingData.visitType === 'qiblatain-mosque' ? 'Qiblatain Mosque' :
+                      'Trench Battle'
+                    }</span>
                   </div>
                   <div className="flex justify-between items-center mb-2">
-                    <span>Car type surcharge:</span>
-                    <span>+${bookingData.carType === 'minivan' ? '50' : '0'}</span>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span>Visit type surcharge:</span>
-                    <span>+${bookingData.visitType === 'package' ? '30' : '0'}</span>
+                    <span>Car type:</span>
+                    <span>{bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}</span>
                   </div>
                   <div className="flex justify-between items-center mb-2 border-t pt-2">
-                    <span>Final price per hour:</span>
+                    <span>Price per hour:</span>
                     <span className="font-semibold">${currentPrice}</span>
                   </div>
                   <div className="flex justify-between items-center mb-2">
@@ -624,14 +625,6 @@ const HomePage = () => {
                   <div className="flex justify-between items-center mb-2">
                     <span>Group size:</span>
                     <span>{bookingData.groupSize} {bookingData.groupSize === 1 ? 'person' : 'people'}</span>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span>Car type:</span>
-                    <span>{bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}</span>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span>Visit type:</span>
-                    <span>{bookingData.visitType === 'onsite' ? 'On the Site' : 'Package'}</span>
                   </div>
                   <div className="flex justify-between items-center font-bold text-lg border-t pt-2">
                     <span>Total:</span>
