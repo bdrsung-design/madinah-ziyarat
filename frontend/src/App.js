@@ -88,24 +88,27 @@ const HomePage = () => {
   const [paymentStatus, setPaymentStatus] = useState(null);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
-  // Calculate dynamic pricing based on car type and visit type
-  const calculatePrice = (basePrice, carType, visitType) => {
-    let price = basePrice;
+  // Fixed pricing table based on car type and location
+  const getPriceBySelection = (carType, visitType) => {
+    const priceTable = {
+      sedan: {
+        'quba-mosque': 27,
+        'mount-uhud': 27,
+        'qiblatain-mosque': 24,
+        'trench-battle': 24
+      },
+      minivan: {
+        'quba-mosque': 35,
+        'mount-uhud': 35,
+        'qiblatain-mosque': 30,
+        'trench-battle': 30
+      }
+    };
     
-    // Car type pricing
-    if (carType === 'minivan') {
-      price += 50; // Mini van costs $50 more per hour
-    }
-    
-    // Visit type pricing
-    if (visitType === 'package') {
-      price += 30; // Package costs $30 more per hour
-    }
-    
-    return price;
+    return priceTable[carType]?.[visitType] || 27; // Default to $27 if not found
   };
 
-  const currentPrice = selectedSite ? calculatePrice(selectedSite.price, bookingData.carType, bookingData.visitType) : 0;
+  const currentPrice = getPriceBySelection(bookingData.carType, bookingData.visitType);
 
   // Check for payment return on component mount
   useEffect(() => {
