@@ -598,9 +598,9 @@ const HomePage = () => {
                   <div className="flex justify-between items-center mb-2">
                     <span>Selected option:</span>
                     <span>{
-                      bookingData.visitType === 'quba-mosque' ? 'Quba Mosque' :
+                      bookingData.visitType === 'masjid-quba' ? 'Masjid Quba' :
                       bookingData.visitType === 'mount-uhud' ? 'Mount Uhud' :
-                      bookingData.visitType === 'qiblatain-mosque' ? 'Qiblatain Mosque' :
+                      bookingData.visitType === 'masjid-qiblatain' ? 'Masjid Qiblatain' :
                       bookingData.visitType === 'trench-battle' ? 'Trench Battle' :
                       bookingData.visitType === 'package' ? 'Package' :
                       'Other Locations'
