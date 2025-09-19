@@ -480,15 +480,17 @@ const HomePage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      📋 Type of Visit
+                      📋 Location Selection
                     </label>
                     <Select value={bookingData.visitType} onValueChange={(value) => setBookingData({...bookingData, visitType: value})}>
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="onsite">On the Site</SelectItem>
-                        <SelectItem value="package">Package</SelectItem>
+                        <SelectItem value="quba-mosque">Quba Mosque</SelectItem>
+                        <SelectItem value="mount-uhud">Mount Uhud</SelectItem>
+                        <SelectItem value="qiblatain-mosque">Qiblatain Mosque</SelectItem>
+                        <SelectItem value="trench-battle">Trench Battle</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
