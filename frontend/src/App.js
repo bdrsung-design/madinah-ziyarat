@@ -192,7 +192,7 @@ const HomePage = () => {
           time: '',
           duration: 2,
           carType: 'sedan',
-          visitType: 'onsite',
+          visitType: 'quba-mosque',
           specialRequests: ''
         });
       } else {
