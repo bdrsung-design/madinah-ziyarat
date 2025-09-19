@@ -88,6 +88,25 @@ const HomePage = () => {
   const [paymentStatus, setPaymentStatus] = useState(null);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
+  // Calculate dynamic pricing based on car type and visit type
+  const calculatePrice = (basePrice, carType, visitType) => {
+    let price = basePrice;
+    
+    // Car type pricing
+    if (carType === 'minivan') {
+      price += 50; // Mini van costs $50 more per hour
+    }
+    
+    // Visit type pricing
+    if (visitType === 'package') {
+      price += 30; // Package costs $30 more per hour
+    }
+    
+    return price;
+  };
+
+  const currentPrice = selectedSite ? calculatePrice(selectedSite.price, bookingData.carType, bookingData.visitType) : 0;
+
   // Check for payment return on component mount
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
