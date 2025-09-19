@@ -70,7 +70,7 @@ const historicalSites = [
     description: "Complete tour package covering all major Islamic historical sites in Madinah",
     significance: "Comprehensive Islamic heritage experience",
     duration: "Flexible (1-10 hours)",
-    image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/4c69e4r3_quba-mosque.jpg",
+    image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/3d6cr9b4_1.jpeg",
     price: 160,
     rating: 4.9
   },
@@ -81,7 +81,7 @@ const historicalSites = [
     description: "Visit other significant Islamic locations and landmarks in Madinah",
     significance: "Additional Islamic heritage sites",
     duration: "Flexible (1-10 hours)",
-    image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/wrxrw3ri_Uhud-Mountain.jpg",
+    image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/kx6d3qf5_2.jpeg",
     price: 180,
     rating: 4.5
   }
