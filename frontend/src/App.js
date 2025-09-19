@@ -26,7 +26,7 @@ const historicalSites = [
     description: "The first mosque ever built in Islam, established by Prophet Muhammad (PBUH) after Hijrah",
     significance: "First mosque in Islamic history",
     duration: "Flexible (1-10 hours)",
-    distance: "6 km from city center",
+    distance: "4 km from city center",
     image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/ly49rk49_quba-mosque.jpg",
     price: 120,
     rating: 4.9
@@ -38,7 +38,7 @@ const historicalSites = [
     description: "Historic site of the Battle of Uhud, where Prophet Muhammad (PBUH) and his companions fought",
     significance: "Battle of Uhud historical site",
     duration: "Flexible (1-10 hours)",
-    distance: "6.4 km north of Madinah",
+    distance: "4 km north of Madinah",
     image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/dl55hk46_Uhud-Mountain.jpg",
     price: 150,
     rating: 4.8
@@ -50,7 +50,7 @@ const historicalSites = [
     description: "The mosque where the Qibla direction was changed from Jerusalem to Makkah",
     significance: "Historic Qibla direction change",
     duration: "Flexible (1-10 hours)",
-    distance: "5 km from city center",
+    distance: "4 km from city center",
     image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/m0vklizi_Qiblatain%20mosque.jpg",
     price: 100,
     rating: 4.7
@@ -62,7 +62,7 @@ const historicalSites = [
     description: "Historic mosques near the site of the Battle of the Trench",
     significance: "Battle of the Trench historical site",
     duration: "Flexible (1-10 hours)",
-    distance: "4 km from city center",
+    distance: "2 km from city center",
     image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/ieodz8c4_Trench%20battle.jpg",
     price: 130,
     rating: 4.6
