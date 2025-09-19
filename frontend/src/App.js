@@ -134,6 +134,8 @@ const HomePage = () => {
   };
 
   const currentPrice = selectedSite ? calculatePrice(selectedSite.price, bookingData.carType, bookingData.visitType) : 0;
+
+  const checkPaymentStatus = async (sessionId, attempts = 0) => {
     const maxAttempts = 5;
     const pollInterval = 2000; // 2 seconds
 
