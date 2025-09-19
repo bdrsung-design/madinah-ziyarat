@@ -701,7 +701,7 @@ Please contact the customer to confirm their booking.`;
                     disabled={isProcessingPayment}
                   >
                     <Mail className="w-4 h-4 mr-2" />
-                    Submit Request to bdrsung@gmail.com
+                    Submit Request
                   </Button>
                 </div>
               </form>
