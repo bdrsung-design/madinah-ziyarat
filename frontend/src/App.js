@@ -190,12 +190,56 @@ const HomePage = () => {
     }
 
     try {
+      // Create email content with booking details
+      const locationName = bookingData.visitType === 'masjid-quba' ? 'Masjid Quba' :
+                           bookingData.visitType === 'mount-uhud' ? 'Mount Uhud' :
+                           bookingData.visitType === 'masjid-qiblatain' ? 'Masjid Qiblatain' :
+                           bookingData.visitType === 'trench-battle' ? 'Trench Battle' :
+                           bookingData.visitType === 'package' ? 'Package' :
+                           'Other Locations';
+
+      const emailSubject = `Madinah Ziyarat Tour Booking Request - ${locationName}`;
+      
+      const emailBody = `New Tour Booking Request from Madinah Ziyarat Website:
+
+CUSTOMER DETAILS:
+- Name: ${bookingData.name}
+- Email: ${bookingData.email || 'Not provided'}
+- Phone: ${bookingData.phone}
+
+BOOKING DETAILS:
+- Location: ${locationName}
+- Date: ${bookingData.date.toDateString()}
+- Time: ${bookingData.time}
+- Duration: ${bookingData.duration} ${bookingData.duration === 1 ? 'hour' : 'hours'}
+- Group Size: ${bookingData.groupSize} ${bookingData.groupSize === 1 ? 'person' : 'people'}
+- Car Type: ${bookingData.carType === 'sedan' ? 'Sedan (Max 4 people)' : 'Mini Van (Max 8 people)'}
+- Payment Method: ${bookingData.paymentMethod === 'cash' ? 'Cash at location (25% confirmation)' : 'Other'}
+
+PRICING:
+- Price per hour: $${currentPrice}
+- Total Cost: $${currentPrice * bookingData.duration}
+
+SPECIAL REQUESTS:
+${bookingData.specialRequests || 'None'}
+
+---
+This booking request was submitted through the Madinah Ziyarat website.
+Please contact the customer to confirm their booking.`;
+
+      // Create mailto link
+      const mailtoLink = `mailto:bdrsung@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Open email client
+      window.open(mailtoLink, '_blank');
+      
+      // Also save to backend for record keeping
       const bookingPayload = {
         name: bookingData.name,
         email: bookingData.email,
         phone: bookingData.phone,
         site_id: selectedSite.id,
-        site_name: selectedSite.name,
+        site_name: locationName,
         group_size: bookingData.groupSize,
         date: bookingData.date.toISOString().split('T')[0],
         time: bookingData.time,
@@ -206,7 +250,7 @@ const HomePage = () => {
 
       const response = await axios.post(`${API}/bookings`, bookingPayload);
       
-      toast.success("Booking request submitted! We'll contact you soon.");
+      toast.success("Booking request submitted! Email opened for sending to bdrsung@gmail.com");
       setShowBooking(false);
       setBookingData({
         name: '',
@@ -221,6 +265,7 @@ const HomePage = () => {
         paymentMethod: 'other',
         specialRequests: ''
       });
+      
     } catch (error) {
       setIsProcessingPayment(false);
       toast.error("Failed to submit booking. Please try again.");
