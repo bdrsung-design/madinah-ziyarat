@@ -111,17 +111,17 @@ const HomePage = () => {
   const getPriceBySelection = (carType, visitType) => {
     const priceTable = {
       sedan: {
-        'quba-mosque': 27,
+        'masjid-quba': 27,
         'mount-uhud': 27,
-        'qiblatain-mosque': 24,
+        'masjid-qiblatain': 24,
         'trench-battle': 24,
         'package': 32,
         'other-locations': 35
       },
       minivan: {
-        'quba-mosque': 35,
+        'masjid-quba': 35,
         'mount-uhud': 35,
-        'qiblatain-mosque': 30,
+        'masjid-qiblatain': 30,
         'trench-battle': 30,
         'package': 40,
         'other-locations': 45
