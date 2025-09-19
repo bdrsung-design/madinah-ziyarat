@@ -437,6 +437,21 @@ const HomePage = () => {
                       </SelectContent>
                     </Select>
                   </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      🚗 Car Type
+                    </label>
+                    <Select value={bookingData.carType} onValueChange={(value) => setBookingData({...bookingData, carType: value})}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="sedan">Sedan</SelectItem>
+                        <SelectItem value="minivan">Mini Van</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
