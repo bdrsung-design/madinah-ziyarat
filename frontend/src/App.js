@@ -206,44 +206,21 @@ const HomePage = () => {
 
       const response = await axios.post(`${API}/bookings`, bookingPayload);
       
-      if (bookingType === 'contact') {
-        toast.success("Booking request submitted! We'll contact you soon.");
-        setShowBooking(false);
-        setBookingData({
-          name: '',
-          email: '',
-          phone: '',
-          groupSize: 1,
-          date: null,
-          time: '',
-          duration: 2,
-          carType: 'sedan',
-          visitType: 'quba-mosque',
-          paymentMethod: 'other',
-          specialRequests: ''
-        });
-      } else {
-        // Handle payment flow
-        const bookingId = response.data.id;
-        const currentUrl = window.location.origin + window.location.pathname;
-        const successUrl = `${currentUrl}?session_id={CHECKOUT_SESSION_ID}`;
-        const cancelUrl = currentUrl;
-
-        setIsProcessingPayment(true);
-        
-        const paymentResponse = await axios.post(`${API}/payments/checkout/session`, {
-          booking_id: bookingId,
-          success_url: successUrl,
-          cancel_url: cancelUrl
-        });
-
-        // Redirect to Stripe Checkout
-        if (paymentResponse.data.url) {
-          window.location.href = paymentResponse.data.url;
-        } else {
-          throw new Error('No checkout URL received');
-        }
-      }
+      toast.success("Booking request submitted! We'll contact you soon.");
+      setShowBooking(false);
+      setBookingData({
+        name: '',
+        email: '',
+        phone: '',
+        groupSize: 1,
+        date: null,
+        time: '',
+        duration: 2,
+        carType: 'sedan',
+        visitType: 'quba-mosque',
+        paymentMethod: 'other',
+        specialRequests: ''
+      });
     } catch (error) {
       setIsProcessingPayment(false);
       toast.error("Failed to submit booking. Please try again.");
