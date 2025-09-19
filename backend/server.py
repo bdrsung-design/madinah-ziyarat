@@ -123,7 +123,7 @@ def parse_from_mongo(item):
 # Routes
 @api_router.get("/")
 async def root():
-    return {"message": "Madinah Historical Tours API", "status": "running"}
+    return {"message": "Madinah Ziyarat API", "status": "running"}
 
 @api_router.get("/health")
 async def health_check():
