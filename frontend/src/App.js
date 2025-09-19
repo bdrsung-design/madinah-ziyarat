@@ -98,7 +98,7 @@ const HomePage = () => {
     time: '',
     duration: 2, // Duration in hours (1-10)
     carType: 'sedan', // Car type: sedan or minivan
-    visitType: 'quba-mosque', // Visit type: specific location
+    visitType: 'masjid-quba', // Visit type: specific location
     paymentMethod: 'other', // Payment method: cash, other
     specialRequests: ''
   });
