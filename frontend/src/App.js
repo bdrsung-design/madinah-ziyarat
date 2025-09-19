@@ -493,10 +493,18 @@ const HomePage = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Additional Options
+                      Pricing Information
                     </label>
-                    <div className="p-3 bg-gray-50 rounded-lg text-sm text-gray-600">
-                      Visit type: {bookingData.visitType === 'onsite' ? 'On the Site' : 'Package'}
+                    <div className="p-3 bg-amber-50 rounded-lg text-sm">
+                      <p className="text-gray-700 mb-1">
+                        <strong>Visit type:</strong> {bookingData.visitType === 'onsite' ? 'On the Site' : 'Package'}
+                      </p>
+                      <p className="text-gray-700 mb-1">
+                        <strong>Car type:</strong> {bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}
+                      </p>
+                      <p className="text-amber-700 font-semibold">
+                        <strong>Price per hour:</strong> ${currentPrice}
+                      </p>
                     </div>
                   </div>
                 </div>
