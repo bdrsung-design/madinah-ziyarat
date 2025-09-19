@@ -80,7 +80,7 @@ const HomePage = () => {
     time: '',
     duration: 2, // Duration in hours (1-10)
     carType: 'sedan', // Car type: sedan or minivan
-    visitType: 'onsite', // Visit type: onsite or package
+    visitType: 'quba-mosque', // Visit type: specific location
     specialRequests: ''
   });
   const [showBooking, setShowBooking] = useState(false);
