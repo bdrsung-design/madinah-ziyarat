@@ -217,7 +217,7 @@ const HomePage = () => {
         time: '',
         duration: 2,
         carType: 'sedan',
-        visitType: 'quba-mosque',
+        visitType: 'masjid-quba',
         paymentMethod: 'other',
         specialRequests: ''
       });
