@@ -99,6 +99,7 @@ const HomePage = () => {
     duration: 2, // Duration in hours (1-10)
     carType: 'sedan', // Car type: sedan or minivan
     visitType: 'quba-mosque', // Visit type: specific location
+    paymentMethod: 'cash', // Payment method: cash, apple-pay, card
     specialRequests: ''
   });
   const [showBooking, setShowBooking] = useState(false);
