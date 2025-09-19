@@ -427,7 +427,6 @@ const HomePage = () => {
                       type="email"
                       value={bookingData.email}
                       onChange={(e) => setBookingData({...bookingData, email: e.target.value})}
-                      required
                       placeholder="Enter your email"
                     />
                   </div>
