@@ -673,8 +673,6 @@ Please contact the customer to confirm their booking.`;
                         bookingData.visitType === 'masjid-qiblatain' ? 'Masjid Qiblatain' :
                         bookingData.visitType === 'trench-battle' ? 'Trench Battle' :
                         bookingData.visitType === 'package' ? 'Package' :
-                        bookingData.visitType === 'airport' ? 'Airport' :
-                        bookingData.visitType === 'train-station' ? 'Train Station' :
                         'Other Locations'
                       }</span>
                     </div>
