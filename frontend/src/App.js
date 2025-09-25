@@ -684,14 +684,38 @@ Please contact the customer to confirm their booking.`;
 
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h3 className="font-semibold text-lg text-gray-800 mb-3 border-b pb-2">Booking Summary</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-xs">
                     <div className="flex justify-between items-center">
                       <span>Name:</span>
                       <span className="font-medium">{bookingData.name || 'Not entered'}</span>
                     </div>
                     <div className="flex justify-between items-center">
+                      <span>Email:</span>
+                      <span className="font-medium">{bookingData.email || 'Not provided'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
                       <span>Mobile:</span>
                       <span className="font-medium">{bookingData.phone || 'Not entered'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Date:</span>
+                      <span className="font-medium">{bookingData.date ? bookingData.date.toLocaleDateString('en-GB') : 'Not selected'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Group Size:</span>
+                      <span className="font-medium">{bookingData.groupSize} {bookingData.groupSize === 1 ? 'Person' : 'People'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Time:</span>
+                      <span className="font-medium">{bookingData.time || 'Not selected'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Duration:</span>
+                      <span className="font-medium">{bookingData.duration} {bookingData.duration === 1 ? 'Hour' : 'Hours'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Payment:</span>
+                      <span className="font-medium">{bookingData.paymentMethod === 'cash' ? 'Cash at location' : 'Other'}</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span>Location:</span>
