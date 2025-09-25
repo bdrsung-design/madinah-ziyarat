@@ -295,7 +295,7 @@ Please contact the customer to confirm their booking.`;
           </h2>
           <p className="text-xl md:text-2xl mb-12 text-gray-200 leading-relaxed">
             Journey through the most historically significant Islamic sites in Madinah. 
-            Book your guided round-trip tours to Islamic locations with Madinah Ziyarat.
+            Book your round-trip tours to Islamic locations with Madinah Ziyarat.
           </p>
           <Button 
             size="lg" 
