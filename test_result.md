@@ -139,11 +139,14 @@ frontend:
     file: "/app/frontend/src/App.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: true
           agent: "main"
           comment: "Form fields reordered: Car Type above Group Size, Tour Time after Group Size, Tour Duration above Payment Method"
+        - working: true
+          agent: "testing"
+          comment: "✅ TESTED: Booking modal opens correctly across all devices. Form fields are properly ordered: Name, Email, Mobile, Car Type, Group Size, Tour Time, Location, Duration, Payment, Date. All dropdowns work on touch devices. Calendar picker functions properly with date selection. Form validation works. Submit Request button is enabled when required fields are filled. Modal is responsive and scrollable on small screens."
 
   - task: "Booking Summary with new order and blue color scheme"
     implemented: true
