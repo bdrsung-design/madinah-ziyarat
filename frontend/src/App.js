@@ -654,49 +654,66 @@ Please contact the customer to confirm their booking.`;
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <div className="flex justify-between items-center mb-2">
-                    <span>Selected option:</span>
-                    <span>{
-                      bookingData.visitType === 'masjid-quba' ? 'Masjid Quba' :
-                      bookingData.visitType === 'mount-uhud' ? 'Mount Uhud' :
-                      bookingData.visitType === 'masjid-qiblatain' ? 'Masjid Qiblatain' :
-                      bookingData.visitType === 'trench-battle' ? 'Trench Battle' :
-                      bookingData.visitType === 'package' ? 'Package' :
-                      'Other Locations'
-                    }</span>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span>Car type:</span>
-                    <span>{bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}</span>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span>Payment method:</span>
-                    <span>{
-                      bookingData.paymentMethod === 'cash' ? 'Cash at location' :
-                      'Other'
-                    }</span>
-                  </div>
-                  <div className="flex justify-between items-center mb-2 border-t pt-2">
-                    <span>Price per hour:</span>
-                    <span className="font-semibold">${currentPrice}</span>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span>Duration:</span>
-                    <span>{bookingData.duration} {bookingData.duration === 1 ? 'hour' : 'hours'}</span>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span>Group size:</span>
-                    <span>{bookingData.groupSize} {bookingData.groupSize === 1 ? 'person' : 'people'}</span>
-                  </div>
-                  {bookingData.paymentMethod === 'cash' && (
-                    <div className="flex justify-between items-center mb-2 bg-yellow-50 p-2 rounded border-t">
-                      <span>Confirmation fee (25%):</span>
-                      <span className="font-semibold text-yellow-700">${Math.round(currentPrice * bookingData.duration * 0.25)}</span>
+                  <h3 className="font-semibold text-lg text-gray-800 mb-3 border-b pb-2">Booking Summary</h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span>Name:</span>
+                      <span className="font-medium">{bookingData.name || 'Not entered'}</span>
                     </div>
-                  )}
-                  <div className="flex justify-between items-center font-bold text-lg border-t pt-2">
-                    <span>Total:</span>
-                    <span className="text-amber-700">${currentPrice * bookingData.duration}</span>
+                    <div className="flex justify-between items-center">
+                      <span>Email:</span>
+                      <span className="font-medium">{bookingData.email || 'Not entered'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Mobile:</span>
+                      <span className="font-medium">{bookingData.phone || 'Not entered'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Date:</span>
+                      <span className="font-medium">
+                        {bookingData.date ? bookingData.date.toLocaleDateString('en-GB') : 'Not selected'}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Group size:</span>
+                      <span className="font-medium">{bookingData.groupSize} {bookingData.groupSize === 1 ? 'person' : 'people'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Car type:</span>
+                      <span className="font-medium">{bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Location:</span>
+                      <span className="font-medium">{
+                        bookingData.visitType === 'masjid-quba' ? 'Masjid Quba' :
+                        bookingData.visitType === 'mount-uhud' ? 'Mount Uhud' :
+                        bookingData.visitType === 'masjid-qiblatain' ? 'Masjid Qiblatain' :
+                        bookingData.visitType === 'trench-battle' ? 'Trench Battle' :
+                        bookingData.visitType === 'package' ? 'Package' :
+                        bookingData.visitType === 'airport' ? 'Airport' :
+                        bookingData.visitType === 'train-station' ? 'Train Station' :
+                        'Other Locations'
+                      }</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Time:</span>
+                      <span className="font-medium">{bookingData.time || 'Not selected'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Duration:</span>
+                      <span className="font-medium">{bookingData.duration} {bookingData.duration === 1 ? 'hour' : 'hours'}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Payment:</span>
+                      <span className="font-medium">{
+                        bookingData.paymentMethod === 'cash' ? 'Cash at location' :
+                        'Other'
+                      }</span>
+                    </div>
+                    <div className="flex justify-between items-center font-bold text-lg border-t pt-2">
+                      <span>Total Cost:</span>
+                      <span className="text-amber-700">${currentPrice * bookingData.duration}</span>
+                    </div>
                   </div>
                 </div>
 
