@@ -541,7 +541,14 @@ Please contact the customer to confirm their booking.`;
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       📋 Location Selection
                     </label>
-                    <Select value={bookingData.visitType} onValueChange={(value) => setBookingData({...bookingData, visitType: value})}>
+                    <Select value={bookingData.visitType} onValueChange={(value) => {
+                      const availableDurations = getAvailableDurations(value);
+                      setBookingData({
+                        ...bookingData, 
+                        visitType: value,
+                        duration: availableDurations.includes(bookingData.duration) ? bookingData.duration : availableDurations[0]
+                      });
+                    }}>
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
