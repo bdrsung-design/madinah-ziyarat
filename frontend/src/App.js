@@ -274,7 +274,7 @@ Please contact the customer to confirm their booking.`;
         site_id: selectedSite.id,
         site_name: locationName,
         group_size: bookingData.groupSize,
-        date: bookingData.date,
+        date: bookingData.date ? bookingData.date.toISOString().split('T')[0] : '',
         time: bookingData.time,
         special_requests: bookingData.specialRequests,
         total_price: currentPrice ? currentPrice * bookingData.duration : 0,
