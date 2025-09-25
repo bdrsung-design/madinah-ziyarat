@@ -203,14 +203,9 @@ metadata:
   run_ui: true
 
 test_plan:
-  current_focus:
-    - "Mobile responsive design for iPhone and Samsung"
-    - "Cross-browser compatibility (Safari, Chrome, Samsung Browser)"
-    - "Booking modal functionality across all devices"
-    - "Form field interactions on touch devices"
-    - "Calendar picker on mobile devices"
+  current_focus: []
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
