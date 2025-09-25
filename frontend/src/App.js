@@ -395,6 +395,24 @@ Please contact the customer to confirm their booking.`;
                     <Button 
                       onClick={() => {
                         setSelectedSite(site);
+                        // Map site names to dropdown values
+                        const locationMapping = {
+                          'Masjid Quba': 'masjid-quba',
+                          'Mount Uhud': 'mount-uhud',
+                          'Masjid Qiblatain': 'masjid-qiblatain',
+                          'Trench Battle': 'trench-battle',
+                          'Package': 'package',
+                          'Other Locations': 'other-locations'
+                        };
+                        
+                        const mappedLocation = locationMapping[site.name] || 'masjid-quba';
+                        const availableDurations = getAvailableDurations(mappedLocation);
+                        
+                        setBookingData({
+                          ...bookingData,
+                          visitType: mappedLocation,
+                          duration: availableDurations[0]
+                        });
                         setShowBooking(true);
                       }}
                       className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white rounded-full px-6"
