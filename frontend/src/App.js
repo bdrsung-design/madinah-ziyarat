@@ -88,7 +88,7 @@ const HomePage = () => {
     email: '',
     phone: '',
     groupSize: 1,
-    date: null,
+    date: '',
     time: '',
     duration: 2, // Duration in hours (1-10)
     carType: 'sedan', // Car type: sedan or minivan
