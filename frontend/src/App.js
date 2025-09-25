@@ -623,18 +623,13 @@ Please contact the customer to confirm their booking.`;
                       <Calendar className="inline w-4 h-4 mr-1" />
                       Tour Date
                     </label>
-                    <Select value={bookingData.date} onValueChange={(value) => setBookingData({...bookingData, date: value})}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select date" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {generateDateOptions().map((dateOption) => (
-                          <SelectItem key={dateOption.value} value={dateOption.value}>
-                            {dateOption.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <CalendarComponent
+                      mode="single"
+                      selected={bookingData.date}
+                      onSelect={(date) => setBookingData({...bookingData, date})}
+                      disabled={(date) => date < new Date()}
+                      className="rounded-md border"
+                    />
                   </div>
                 </div>
 
