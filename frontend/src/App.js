@@ -575,8 +575,27 @@ Please contact the customer to confirm their booking.`;
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <Clock className="inline w-4 h-4 mr-1" />
+                      Tour Duration
+                    </label>
+                    <Select value={bookingData.duration.toString()} onValueChange={(value) => setBookingData({...bookingData, duration: parseInt(value)})}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {getAvailableDurations(bookingData.visitType).map(hours => (
+                          <SelectItem key={hours} value={hours.toString()}>
+                            {hours} {hours === 1 ? 'Hour' : 'Hours'}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       <Calendar className="inline w-4 h-4 mr-1" />
-                      Tour Date
+                      Tour Date (dd/mm/yyyy)
                     </label>
                     <CalendarComponent
                       mode="single"
@@ -586,7 +605,9 @@ Please contact the customer to confirm their booking.`;
                       className="rounded-md border"
                     />
                   </div>
-                  
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       <Clock className="inline w-4 h-4 mr-1" />
@@ -600,60 +621,22 @@ Please contact the customer to confirm their booking.`;
                         <SelectItem value="06:00">6:00 AM</SelectItem>
                         <SelectItem value="08:00">8:00 AM</SelectItem>
                         <SelectItem value="10:00">10:00 AM</SelectItem>
+                        <SelectItem value="12:00">12:00 PM</SelectItem>
                         <SelectItem value="14:00">2:00 PM</SelectItem>
                         <SelectItem value="16:00">4:00 PM</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <Clock className="inline w-4 h-4 mr-1" />
-                      Tour Duration
-                    </label>
-                    <Select value={bookingData.duration.toString()} onValueChange={(value) => setBookingData({...bookingData, duration: parseInt(value)})}>
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {[1,2,3,4,5,6,7,8,9,10].map(hours => (
-                          <SelectItem key={hours} value={hours.toString()}>
-                            {hours} {hours === 1 ? 'Hour' : 'Hours'}
-                          </SelectItem>
-                        ))}
                       </SelectContent>
                     </Select>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Pricing Information
+                      Information Notice
                     </label>
-                    <div className="p-3 bg-amber-50 rounded-lg text-sm">
-                      <p className="text-gray-700 mb-1">
-                        <strong>Location:</strong> {
-                          bookingData.visitType === 'masjid-quba' ? 'Masjid Quba' :
-                          bookingData.visitType === 'mount-uhud' ? 'Mount Uhud' :
-                          bookingData.visitType === 'masjid-qiblatain' ? 'Masjid Qiblatain' :
-                          bookingData.visitType === 'trench-battle' ? 'Trench Battle' :
-                          bookingData.visitType === 'package' ? 'Package' :
-                          'Other Locations'
-                        }
-                      </p>
-                      <p className="text-gray-700 mb-1">
-                        <strong>Car type:</strong> {bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}
-                      </p>
-                      <p className="text-gray-700 mb-1">
-                        <strong>Payment:</strong> {
-                          bookingData.paymentMethod === 'cash' ? 'Cash at location (25% confirmation)' :
-                          'Other'
-                        }
-                      </p>
-                      <p className="text-amber-700 font-semibold">
-                        <strong>Price per hour:</strong> ${currentPrice}
-                      </p>
+                    <div className="p-3 bg-blue-50 rounded-lg text-sm">
+                      <p className="text-blue-700 font-medium mb-2">Package includes:</p>
+                      <p className="text-blue-600 text-xs mb-2">Masjid Quba, Mount Uhud, Masjid Qiblatain, and Trench Battle</p>
+                      <p className="text-blue-700 font-medium mb-2">Other locations include:</p>
+                      <p className="text-blue-600 text-xs">Ghars Well, Uhud Cave, Bir Uthman and Farm, Salman Alfarsi Well and Farm, Bayt Fatimah bint Alhusain, Quran Press, etc.</p>
                     </div>
                   </div>
                 </div>
