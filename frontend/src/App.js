@@ -321,7 +321,7 @@ Please contact the customer to confirm their booking.`;
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-amber-200 to-orange-300 bg-clip-text text-transparent">
-            Discover Madinah's
+            Madinah Ziyarat Booking
           </h1>
           <h2 className="text-4xl md:text-6xl font-bold mb-8">
             Islamic Heritage
