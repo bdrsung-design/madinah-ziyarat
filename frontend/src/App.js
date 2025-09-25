@@ -366,8 +366,8 @@ Please contact the customer to confirm their booking.`;
                   
                   <div className="flex items-center justify-between text-sm text-gray-500">
                     <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {site.duration}
+                      <Star className="w-4 h-4 mr-1 fill-current text-amber-500" />
+                      {site.rating} rating
                     </div>
                   </div>
                   
