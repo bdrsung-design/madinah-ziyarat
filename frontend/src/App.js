@@ -705,7 +705,7 @@ Please contact the customer to confirm their booking.`;
                     <div className="flex justify-between items-center">
                       <span>Date:</span>
                       <span className="font-medium">
-                        {bookingData.date ? bookingData.date.toLocaleDateString('en-GB') : 'Not selected'}
+                        {bookingData.date ? new Date(bookingData.date).toLocaleDateString('en-GB') : 'Not selected'}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
