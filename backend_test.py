@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 import time
 
 class MadinahToursAPITester:
-    def __init__(self, base_url="https://madinah-history.preview.emergentagent.com"):
+    def __init__(self, base_url="https://madina-tours.preview.emergentagent.com"):
         self.base_url = base_url
         self.api_url = f"{base_url}/api"
         self.tests_run = 0
