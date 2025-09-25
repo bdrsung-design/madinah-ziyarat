@@ -604,15 +604,20 @@ Please contact the customer to confirm their booking.`;
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       <Calendar className="inline w-4 h-4 mr-1" />
-                      Tour Date (dd/mm/yyyy)
+                      Tour Date
                     </label>
-                    <CalendarComponent
-                      mode="single"
-                      selected={bookingData.date}
-                      onSelect={(date) => setBookingData({...bookingData, date})}
-                      disabled={(date) => date < new Date()}
-                      className="rounded-md border"
-                    />
+                    <Select value={bookingData.date} onValueChange={(value) => setBookingData({...bookingData, date: value})}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select date" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {generateDateOptions().map((dateOption) => (
+                          <SelectItem key={dateOption.value} value={dateOption.value}>
+                            {dateOption.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
 
