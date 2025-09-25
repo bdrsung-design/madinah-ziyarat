@@ -321,8 +321,11 @@ Please contact the customer to confirm their booking.`;
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-amber-200 to-orange-300 bg-clip-text text-transparent">
-            Madinah Ziyarat Booking
+            Discover Madinah's
           </h1>
+          <h2 className="text-4xl md:text-6xl font-bold mb-8">
+            Islamic Heritage
+          </h2>
           <p className="text-xl md:text-2xl mb-12 text-gray-200 leading-relaxed">
             Journey through the most historically significant Islamic sites in Madinah. 
             Book your round-trip tours to Islamic locations with Madinah Ziyarat Booking.
