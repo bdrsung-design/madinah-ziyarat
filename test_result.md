@@ -156,15 +156,18 @@ frontend:
 
   - task: "Mobile responsive design for iPhone and Samsung"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/App.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: "NA"
           agent: "main"
           comment: "Need to test responsive design across iPhone, Samsung, and PC platforms"
+        - working: true
+          agent: "testing"
+          comment: "✅ TESTED: Mobile responsive design works across all tested devices. iPhone (375x812, 414x896), Samsung Android (360x640, 412x915), and Desktop (1920x1080, 1366x768). Hero section, tour cards, booking modal, and floating icons all display properly. Card widths adapt correctly to viewport sizes. Form fields are properly sized for touch interaction. Minor: Booking summary doesn't update in real-time but core functionality works."
 
   - task: "Cross-browser compatibility (Safari, Chrome, Samsung Browser)"
     implemented: true
