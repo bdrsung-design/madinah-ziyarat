@@ -485,13 +485,13 @@ Please contact the customer to confirm their booking.`;
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       <Phone className="inline w-4 h-4 mr-1" />
-                      Phone Number
+                      Mobile Number
                     </label>
                     <Input
                       value={bookingData.phone}
                       onChange={(e) => setBookingData({...bookingData, phone: e.target.value})}
                       required
-                      placeholder="Enter your phone number"
+                      placeholder="Enter your mobile number"
                     />
                   </div>
                   
