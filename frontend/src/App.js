@@ -236,16 +236,16 @@ const HomePage = () => {
 CUSTOMER DETAILS:
 - Name: ${bookingData.name}
 - Email: ${bookingData.email || 'Not provided'}
-- Phone: ${bookingData.phone}
+- Mobile: ${bookingData.phone}
 
 BOOKING DETAILS:
 - Location: ${locationName}
-- Date: ${bookingData.date.toDateString()}
+- Date: ${bookingData.date.toLocaleDateString('en-GB')} (dd/mm/yyyy)
 - Time: ${bookingData.time}
 - Duration: ${bookingData.duration} ${bookingData.duration === 1 ? 'hour' : 'hours'}
 - Group Size: ${bookingData.groupSize} ${bookingData.groupSize === 1 ? 'person' : 'people'}
 - Car Type: ${bookingData.carType === 'sedan' ? 'Sedan (Max 4 people)' : 'Mini Van (Max 8 people)'}
-- Payment Method: ${bookingData.paymentMethod === 'cash' ? 'Cash at location (25% confirmation)' : 'Other'}
+- Payment Method: ${bookingData.paymentMethod === 'cash' ? 'Cash at location' : 'Other'}
 
 PRICING:
 - Price per hour: $${currentPrice}
