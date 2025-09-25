@@ -565,7 +565,7 @@ Please contact the customer to confirm their booking.`;
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="cash">Pay cash at location (25% confirmation)</SelectItem>
+                        <SelectItem value="cash">Pay cash at location</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
