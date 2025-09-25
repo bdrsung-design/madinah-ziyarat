@@ -242,7 +242,7 @@ CUSTOMER DETAILS:
 
 BOOKING DETAILS:
 - Location: ${locationName}
-- Date: ${bookingData.date.toLocaleDateString('en-GB')} (dd/mm/yyyy)
+- Date: ${bookingData.date ? new Date(bookingData.date).toLocaleDateString('en-GB') : 'Not selected'}
 - Time: ${bookingData.time}
 - Duration: ${bookingData.duration} ${bookingData.duration === 1 ? 'hour' : 'hours'}
 - Group Size: ${bookingData.groupSize} ${bookingData.groupSize === 1 ? 'person' : 'people'}
