@@ -536,6 +536,26 @@ Please contact the customer to confirm their booking.`;
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <Clock className="inline w-4 h-4 mr-1" />
+                      Tour Time
+                    </label>
+                    <Select value={bookingData.time} onValueChange={(value) => setBookingData({...bookingData, time: value})}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select time" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="06:00">6:00 AM</SelectItem>
+                        <SelectItem value="08:00">8:00 AM</SelectItem>
+                        <SelectItem value="10:00">10:00 AM</SelectItem>
+                        <SelectItem value="12:00">12:00 PM</SelectItem>
+                        <SelectItem value="14:00">2:00 PM</SelectItem>
+                        <SelectItem value="16:00">4:00 PM</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       🚗 Car Type
                     </label>
                     <Select value={bookingData.carType} onValueChange={(value) => {
