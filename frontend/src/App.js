@@ -121,7 +121,7 @@ const HomePage = () => {
   const [paymentStatus, setPaymentStatus] = useState(null);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
-  // New comprehensive pricing table
+  // New comprehensive pricing table with Airport and Train Station
   const getPriceBySelection = (carType, visitType) => {
     const priceTable = {
       sedan: {
@@ -130,7 +130,9 @@ const HomePage = () => {
         'masjid-qiblatain': 24,
         'trench-battle': 24,
         'package': 32,
-        'other-locations': 35
+        'other-locations': 35,
+        'airport': 26,
+        'train-station': 22
       },
       minivan: {
         'masjid-quba': 35,
@@ -138,11 +140,24 @@ const HomePage = () => {
         'masjid-qiblatain': 30,
         'trench-battle': 30,
         'package': 40,
-        'other-locations': 45
+        'other-locations': 45,
+        'airport': 40,
+        'train-station': 32
       }
     };
     
     return priceTable[carType]?.[visitType] || 27;
+  };
+
+  // Get available duration options based on location
+  const getAvailableDurations = (visitType) => {
+    const singleHourLocations = ['masjid-quba', 'mount-uhud', 'masjid-qiblatain', 'trench-battle', 'airport', 'train-station'];
+    
+    if (singleHourLocations.includes(visitType)) {
+      return [1]; // Only 1 hour for specific locations
+    } else {
+      return [2, 3, 4, 5, 6, 7, 8]; // 2+ hours for Package and Other Locations
+    }
   };
 
   const currentPrice = getPriceBySelection(bookingData.carType, bookingData.visitType);
