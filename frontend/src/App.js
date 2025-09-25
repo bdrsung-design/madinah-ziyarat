@@ -535,8 +535,6 @@ Please contact the customer to confirm their booking.`;
                         <SelectItem value="trench-battle">Trench Battle</SelectItem>
                         <SelectItem value="package">Package</SelectItem>
                         <SelectItem value="other-locations">Other Locations</SelectItem>
-                        <SelectItem value="airport">Airport</SelectItem>
-                        <SelectItem value="train-station">Train Station</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
