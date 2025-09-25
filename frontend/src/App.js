@@ -290,7 +290,7 @@ Please contact the customer to confirm their booking.`;
         email: '',
         phone: '',
         groupSize: 1,
-        date: '',
+        date: null,
         time: '',
         duration: 2,
         carType: 'sedan',
