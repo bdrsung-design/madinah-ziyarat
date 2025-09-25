@@ -323,7 +323,7 @@ Please contact the customer to confirm their booking.`;
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-amber-200 to-orange-300 bg-clip-text text-transparent">
             Discover Madinah's
           </h1>
-          <h2 className="text-4xl md:text-6xl font-bold mb-8">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-amber-200 to-orange-300 bg-clip-text text-transparent">
             Islamic Heritage
           </h2>
           <p className="text-xl md:text-2xl mb-12 text-gray-200 leading-relaxed">
