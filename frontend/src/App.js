@@ -681,32 +681,14 @@ Please contact the customer to confirm their booking.`;
 
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h3 className="font-semibold text-lg text-gray-800 mb-3 border-b pb-2">Booking Summary</h3>
-                  <div className="space-y-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
                     <div className="flex justify-between items-center">
                       <span>Name:</span>
                       <span className="font-medium">{bookingData.name || 'Not entered'}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Email:</span>
-                      <span className="font-medium">{bookingData.email || 'Not entered'}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
                       <span>Mobile:</span>
                       <span className="font-medium">{bookingData.phone || 'Not entered'}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span>Date:</span>
-                      <span className="font-medium">
-                        {bookingData.date ? new Date(bookingData.date).toLocaleDateString('en-GB') : 'Not selected'}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span>Group size:</span>
-                      <span className="font-medium">{bookingData.groupSize} {bookingData.groupSize === 1 ? 'person' : 'people'}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span>Car type:</span>
-                      <span className="font-medium">{bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span>Location:</span>
@@ -722,21 +704,10 @@ Please contact the customer to confirm their booking.`;
                       }</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Time:</span>
-                      <span className="font-medium">{bookingData.time || 'Not selected'}</span>
+                      <span>Car Type:</span>
+                      <span className="font-medium">{bookingData.carType === 'sedan' ? 'Sedan' : 'Mini Van'}</span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span>Duration:</span>
-                      <span className="font-medium">{bookingData.duration} {bookingData.duration === 1 ? 'hour' : 'hours'}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span>Payment:</span>
-                      <span className="font-medium">{
-                        bookingData.paymentMethod === 'cash' ? 'Cash at location' :
-                        'Other'
-                      }</span>
-                    </div>
-                    <div className="flex justify-between items-center font-bold text-lg border-t pt-2">
+                    <div className="flex justify-between items-center md:col-span-2 font-bold text-lg border-t pt-2 mt-2">
                       <span>Total Cost:</span>
                       <span className="text-amber-700">${currentPrice * bookingData.duration}</span>
                     </div>
