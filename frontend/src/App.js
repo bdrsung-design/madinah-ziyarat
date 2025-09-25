@@ -78,26 +78,6 @@ const historicalSites = [
     image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/kx6d3qf5_2.jpeg",
     price: 180,
     rating: 4.5
-  },
-  {
-    id: 7,
-    name: "Airport",
-    nameArabic: "المطار",
-    description: "Airport transfer and tour services",
-    significance: "Transportation service",
-    image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/3d6cr9b4_1.jpeg",
-    price: 120,
-    rating: 4.8
-  },
-  {
-    id: 8,
-    name: "Train Station",
-    nameArabic: "محطة القطار",
-    description: "Train station transfer and tour services",
-    significance: "Transportation service",
-    image: "https://customer-assets.emergentagent.com/job_madinah-history/artifacts/kx6d3qf5_2.jpeg",
-    price: 100,
-    rating: 4.7
   }
 ];
 
